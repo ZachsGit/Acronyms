@@ -1,26 +1,79 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rbw-RN-crF">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="EbQ-tV-Oqw">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="rbw-RN-crF" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="6Za-Cv-vfI"/>
+                        <viewControllerLayoutGuide type="bottom" id="esJ-9P-OmH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="VMS-ak-YH9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="srk-wj-WDK">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="31" id="o5v-fp-Ecr" customClass="MainTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="31"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o5v-fp-Ecr" id="SFT-ON-1FI">
+                                            <frame key="frameInset" width="375" height="31"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UC8-OT-BbD">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="UC8-OT-BbD" secondAttribute="bottom" constant="10" id="MTJ-Sp-1F7"/>
+                                                <constraint firstItem="UC8-OT-BbD" firstAttribute="top" secondItem="SFT-ON-1FI" secondAttribute="top" constant="10" id="TqN-6b-Ml2"/>
+                                                <constraint firstAttribute="trailing" secondItem="UC8-OT-BbD" secondAttribute="trailing" constant="10" id="e2T-qC-Wlc"/>
+                                                <constraint firstItem="UC8-OT-BbD" firstAttribute="leading" secondItem="SFT-ON-1FI" secondAttribute="leading" constant="10" id="zEo-zE-qSZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="UC8-OT-BbD" id="7Rn-ie-sUW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="dd8-II-Zph">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="c3H-za-44u"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="esJ-9P-OmH" firstAttribute="top" secondItem="srk-wj-WDK" secondAttribute="bottom" id="4Cc-Bo-hsy"/>
+                            <constraint firstItem="dd8-II-Zph" firstAttribute="top" secondItem="VMS-ak-YH9" secondAttribute="top" constant="20" id="Alg-Nf-pll"/>
+                            <constraint firstItem="srk-wj-WDK" firstAttribute="leading" secondItem="VMS-ak-YH9" secondAttribute="leading" id="BUH-Bk-e17"/>
+                            <constraint firstItem="srk-wj-WDK" firstAttribute="top" secondItem="dd8-II-Zph" secondAttribute="bottom" id="J5r-yh-T6K"/>
+                            <constraint firstAttribute="trailing" secondItem="srk-wj-WDK" secondAttribute="trailing" id="JY4-xA-vtr"/>
+                            <constraint firstAttribute="trailing" secondItem="dd8-II-Zph" secondAttribute="trailing" id="Mr1-PZ-NRE"/>
+                            <constraint firstItem="dd8-II-Zph" firstAttribute="leading" secondItem="VMS-ak-YH9" secondAttribute="leading" id="wn2-8e-1dj"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="snz-Tl-Dfz"/>
+                    <connections>
+                        <outlet property="theSearchBar" destination="dd8-II-Zph" id="39x-Tb-qVI"/>
+                        <outlet property="theTableView" destination="srk-wj-WDK" id="TSh-VJ-hrX"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7BV-7d-pyx" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="278" y="135"/>
         </scene>
     </scenes>
 </document>
